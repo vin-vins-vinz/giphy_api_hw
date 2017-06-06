@@ -32,7 +32,7 @@ function displayGif(){
 
 		for (n=0; n<results.length; n++){
 
-			if (results[n].rating !== "g" && results[n].rating !== "pg" && results[n].rating !== "pg-13" && results[n].rating !== "y") {
+			if (results[n].rating !== "g" || results[n].rating !== "pg") {
 
 				var gifDiv = $("<div class='resultGif'>");
 
@@ -63,7 +63,7 @@ $("#add-player").on("click",function(event){
 	renderButtons();
 });
 
-$(document).on("click", "#gif-display", displayGif);
+$(document).on("click", ".players", displayGif);
 
 renderButtons();
 
